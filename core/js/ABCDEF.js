@@ -3,5 +3,7 @@
  */
 
  class ABCDEFgame {
-    
- }
+    loadAssets() {
+        
+    };
+ };

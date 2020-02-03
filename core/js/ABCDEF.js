@@ -22,3 +22,7 @@ var assets = [
             .then(json => console.log(json));
     };
  };
+
+ var A = ABCDEFgame();
+ 
+ A.loadAssets();

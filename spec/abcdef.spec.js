@@ -5,11 +5,9 @@ describe ("The game is loaded", function () {
     var assetCount = 0;
     var countJSON = 0;
     beforeAll ( function () {
-        fs.readdir( "./assets", (error, files) => { 
-            assetCount = files.length; 
-        });
-
         fs.readdir("./assets", (err, files) => {
+            if (err) throw err;  
+            assetCount = files.length; 
             files.forEach(file => {
                 if(file.endsWith(".json")){
                     countJSON++;

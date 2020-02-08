@@ -20,12 +20,13 @@ var assets = [
  class ABCDEFgame {
     
     loadAssets() {
-        fs.readdir("./assets", (err, files) => {
-            files.forEach(file => {
-                if(file.endsWith(".json")){
-                    console.log(file);
-                }
-            }); 
+        fs.readdir("../../assets", (err, files) => {
+            for(var assetIndex = 0;
+                assetIndex < files.length;
+                assetIndex++){
+                    
+                var assetJSON = fs.readFile(files[assetIndex]);    
+            } 
         }); 
     };
  };

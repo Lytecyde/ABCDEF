@@ -1,0 +1,8 @@
+[
+    {
+        "name" : "Granary",
+        "requirement" : "Pottery",
+        "cost" : 80,
+        "work" : 40
+    }
+]

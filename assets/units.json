@@ -1,0 +1,9 @@
+[
+    {
+        "name" : "band",
+        "life" : 10,
+        "attack" : 1,
+        "defence": 1,
+        "requirement" : "none" 
+    }
+]

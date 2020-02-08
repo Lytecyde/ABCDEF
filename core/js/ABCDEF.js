@@ -4,6 +4,8 @@
 
 var fs = require('fs-extra');
 
+
+
 var assets = [
         "civilizations", 
         "cities", 
@@ -20,16 +22,29 @@ var assets = [
  class ABCDEFgame {
     
     loadAssets() {
-        fs.readdir("../../assets", (err, files) => {
-            for(var assetIndex = 0;
-                assetIndex < files.length;
-                assetIndex++){
-                    
-                var assetJSON = fs.readFile(files[assetIndex]);    
-            } 
-        }); 
+        var dirname = "../../assets/";
+        
+        fs.readdir(dirname, function(err, filenames) {
+            if (err) {
+              throw err;
+            }
+            filenames.forEach(function(filename) {
+                fs.readFile(dirname + filename, 'utf-8', function(err, content) {
+                    if (err) {
+                        throw err;
+                    }
+                    onFileContent(filename, content);
+                });
+            });
+        });
     };
  };
+
+var onFileContent = function (filename, content) {
+    var data = {};
+    data[filename] = content;
+    console.log(content);
+}
 
  var A = new ABCDEFgame();
  

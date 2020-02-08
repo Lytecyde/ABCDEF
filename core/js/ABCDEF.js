@@ -44,6 +44,9 @@ var onFileContent = function (filename, content) {
     var data = {};
     data[filename] = content;
     console.log(content);
+    var assetObject = JSON.parse(content);
+    console.log("ASSET JSON OBJECT:");
+    console.log(assetObject);
 }
 
  var A = new ABCDEFgame();

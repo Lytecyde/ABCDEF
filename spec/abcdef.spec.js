@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs-extra');
 
-describe ("The game is started", function () {
+describe ("The game is loaded", function () {
     var assetCount = 0;
     var countJSON = 0;
     beforeAll ( function () {
@@ -26,7 +26,7 @@ describe ("The game is started", function () {
         expect(assetCount).not.toEqual(0);
     })
 
-    it("should have json files", function() {
+    it("should have some json files", function() {
         expect(countJSON).not.toEqual(0);
     })
 });

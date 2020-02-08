@@ -16,5 +16,10 @@ describe ("The game is started", function () {
 
     it ("should load all in assets folder", function () {
         expect(assetCount).toEqual(11);
+        
     });
+
+    it("should not be 0 asset files", function () {
+        expect(assetCount).not.toEqual(0);
+    })
 });

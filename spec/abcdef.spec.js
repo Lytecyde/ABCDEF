@@ -1,4 +1,3 @@
-var http = require('http');
 var fs = require('fs-extra');
 
 describe ("The game is loaded", function () {

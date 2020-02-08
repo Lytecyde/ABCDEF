@@ -7,8 +7,6 @@ describe ("The game is started", function () {
 
         fs.readdir( "./assets", (error, files) => { 
             assetCount = files.length; 
-            console.log(assetCount); 
-            expect(assetCount).toEqual(11);
          });
     });
 
@@ -16,7 +14,7 @@ describe ("The game is started", function () {
         console.log("start message seen");
     });
 
-    // it ("should load all in assets folder", function () {
-    //     expect(assetCount).toEqual(11);
-    // });
+    it ("should load all in assets folder", function () {
+        expect(assetCount).toEqual(11);
+    });
 });

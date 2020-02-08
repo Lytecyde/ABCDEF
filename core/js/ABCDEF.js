@@ -1,6 +1,9 @@
 /**
  * 
  */
+
+var fs = require('fs-extra');
+
 var assets = [
         "civilizations", 
         "cities", 
@@ -17,12 +20,16 @@ var assets = [
  class ABCDEFgame {
     
     loadAssets() {
-        fetch("../assets/civilizations.json")
-            .then(response => response.json())
-            .then(json => console.log(json));
+        fs.readdir("./assets", (err, files) => {
+            files.forEach(file => {
+                if(file.endsWith(".json")){
+                    console.log(file);
+                }
+            }); 
+        }); 
     };
  };
 
- var A = ABCDEFgame();
+ var A = new ABCDEFgame();
  
  A.loadAssets();

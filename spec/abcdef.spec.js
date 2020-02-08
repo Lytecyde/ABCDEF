@@ -1,18 +1,12 @@
-var fs = require('fs-extra');
-
 describe ("The game is loaded", function () {
     var assetCount = 0;
-    var countJSON = 0;
+    var countJSONFiles = 0;
     beforeAll ( function () {
-        fs.readdir("./assets", (err, files) => {
-            if (err) throw err;  
-            assetCount = files.length; 
-            files.forEach(file => {
-                if(file.endsWith(".json")){
-                    countJSON++;
-                }
-            }); 
-        });
+        console.log("And count again:");
+        var assets = require("./helpers/fileUse.js");
+        assetCount = assets.countAssets();
+        console.log(assetCount);
+        countJSONFiles = assets.countJSON();
     });
 
     it ("should send a starting message", function() {
@@ -24,8 +18,6 @@ describe ("The game is loaded", function () {
     })
 
     it("should have some json files", function() {
-        expect(countJSON).not.toEqual(0);
+        expect(countJSONFiles).not.toEqual(0);
     })
-
-    
 });

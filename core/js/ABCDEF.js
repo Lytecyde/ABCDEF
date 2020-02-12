@@ -20,33 +20,34 @@ var assets = [
     ];
  class ABCDEFgame {
     
-    loadAssets() {
-        var dirname = "../../assets/";
-        
-        fs.readdir(dirname, function(err, filenames) {
-            if (err) {
-              throw err;
-            }
-            filenames.forEach(function(filename) {
-                fs.readFile(dirname + filename, 'utf-8', function(err, content) {
-                    if (err) {
-                        throw err;
-                    }
-                    onFileContent(filename, content);
-                });
-            });
-        });
+    loadAssets() {       
+        readIn();
     };
  };
+
+var readIn = function () {
+    var dirname = "../../assets/";
+    fs.readdir(dirname, function(err, filenames) {
+        if (err) throw err;
+        readFile(dirname, filenames);
+    });
+}
+
+var readFile = function (dirname, filenames) {
+    filenames.forEach(function(filename) {
+        fs.readFile(dirname + filename, 'utf-8', function(err, content) {
+            if (err) throw err;
+            onFileContent(filename, content);
+        });
+    });
+}
 
 var onFileContent = function (filename, content) {
     var data = {};
     data[filename] = content;
-    
-    var assetObject = JSON.parse(content);
-    
+    var assetObject = JSON.parse(content);  
 }
 
- var A = new ABCDEFgame();
+var A = new ABCDEFgame();
  
- A.loadAssets();
+A.loadAssets();

@@ -15,7 +15,6 @@ module.exports = {
         
     },
     countAssets: function () {
-        var count = 0;
         var assetCount = 0;
         fs.readdir("./assets", (err, files) => {
             if (err) throw err;  
